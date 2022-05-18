@@ -12,7 +12,6 @@ export class Login extends React.Component {
     this.setState({
       username: value,
     });
-    console.log(value);
   };
   handlePasswordChange = (event) => {
     const value = event.target.value;
@@ -20,7 +19,6 @@ export class Login extends React.Component {
     this.setState({
       password: value,
     });
-    console.log(value);
   };
   handleRememberChange = (event) => {
     const value = event.target.checked;
@@ -28,7 +26,6 @@ export class Login extends React.Component {
     this.setState({
       remember: value,
     });
-    console.log(value);
   };
 
   render() {
@@ -51,6 +48,14 @@ export class Login extends React.Component {
           checked={this.state.remember}
           onChange={this.handleRememberChange}
         ></input>
+
+        <button
+          name="login"
+          disabled={(!this.state.username || !this.state.password) ?? true}
+          onClick={() => this.props.handleState(this.state)}
+        >
+          Login
+        </button>
       </div>
     );
   }

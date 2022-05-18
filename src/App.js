@@ -7,6 +7,10 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 import { Login } from "./Login";
 
+const onLogin = (state) => {
+  return console.log(state);
+};
+
 export class App extends React.Component {
   render() {
     return (
@@ -21,7 +25,7 @@ export class App extends React.Component {
         <ClickCounter />
         <ClickTracker />
         <InteractiveWelcome />
-        <Login />
+        <Login handleState={onLogin} />
       </div>
     );
   }
