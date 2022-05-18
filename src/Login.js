@@ -28,6 +28,14 @@ export class Login extends React.Component {
     });
   };
 
+  handleReset = (event) => {
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -56,6 +64,7 @@ export class Login extends React.Component {
         >
           Login
         </button>
+        <button onClick={this.handleReset}>Reset</button>
       </div>
     );
   }
