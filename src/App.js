@@ -7,6 +7,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
+import { TodoList } from "./TodoList";
 
 const onLogin = (state) => {
   return console.log(state);
@@ -28,6 +29,7 @@ export class App extends React.Component {
         <InteractiveWelcome />
         <Login handleState={onLogin} />
         <UncontrolledLogin />
+        <TodoList  />
       </div>
     );
   }
