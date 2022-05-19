@@ -6,6 +6,7 @@ import { Hello } from "./Hello";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 import { Login } from "./Login";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 const onLogin = (state) => {
   return console.log(state);
@@ -26,6 +27,7 @@ export class App extends React.Component {
         <ClickTracker />
         <InteractiveWelcome />
         <Login handleState={onLogin} />
+        <UncontrolledLogin />
       </div>
     );
   }
