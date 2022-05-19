@@ -12,7 +12,11 @@ export class TodoList extends React.Component {
     this.setState({ todos: [...this.state.todos, this.myRef.current.value] });
     this.myRef.current.value = "";
   };
-
+  handleResetItems = () => {
+    this.setState({
+      todos: [],
+    });
+  };
   render() {
     return (
       <div>
@@ -25,6 +29,7 @@ export class TodoList extends React.Component {
         <button id="button" onClick={this.handleItemValue}>
           Add
         </button>
+        <button onClick={this.handleResetItems}>Reset</button>
       </div>
     );
   }
