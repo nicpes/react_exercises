@@ -10,7 +10,7 @@ export class TodoList extends React.Component {
   };
 
   handleAdditem = () => {
-    this.setState({ todos: [...this.state.todos, this.myRef.current.value] });
+    this.setState({ todos: [...this.state.todos, this.state.input.value] });
     this.myRef.current.value = "";
   };
   handleResetItems = () => {
