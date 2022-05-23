@@ -9,9 +9,15 @@ export class TodoList extends React.Component {
     input: [],
   };
 
-  handleAdditem = () => {
-    this.setState({ todos: [...this.state.todos, this.myRef.current.value] });
-    this.myRef.current.value = "";
+  handleAdditem = (event) => {
+    event.preventDefault();
+    const todoElement = event.target.elements.todo;
+    const todo = todoElement.value;
+    this.setState((state) => {
+      return { todos: [...state.todos, todo] };
+    });
+    todoElement.value = "";
+    console.log(this.state.todos);
   };
   handleResetItems = () => {
     this.setState({
@@ -19,9 +25,9 @@ export class TodoList extends React.Component {
     });
   };
 
-  handleRemove = (todo, index) => {
-    this.setState({
-      todos: this.state.todos.filter((index) => todo !== index),
+  handleRemove = (index) => {
+    this.setState((state) => {
+      return { todos: state.todos.filter((todo, i) => i !== index) };
     });
   };
 
@@ -32,16 +38,16 @@ export class TodoList extends React.Component {
           {this.state.todos.map((todo, index) => (
             <li ref={this.listRef} key={index}>
               {todo}
-              <button onClick={() => this.handleRemove(todo, index)}>
-                Remove
-              </button>
+              <button onClick={() => this.handleRemove(index)}>Remove</button>
             </li>
           ))}
         </ul>
-        <input name="input" ref={this.myRef}></input>
-        <button id="button" onClick={this.handleAdditem}>
-          Add
-        </button>
+        <form onSubmit={this.handleAdditem}>
+          <input name="todo" ref={this.myRef}></input>
+          <button id="button" type="submit">
+            Add
+          </button>
+        </form>
         <button onClick={this.handleResetItems}>Reset</button>
       </div>
     );
