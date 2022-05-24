@@ -9,3 +9,7 @@ export function Sum(props) {
     </div>
   );
 }
+
+Sum.defaultProps = {
+  numbers: [1, 2, 3],
+};
