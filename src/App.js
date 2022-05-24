@@ -17,15 +17,26 @@ const onLogin = (state) => {
 };
 
 export class App extends React.Component {
+  state = {
+    language: "it",
+  };
+  handleLangueChange = (event) => {
+    this.setState({
+      language: event.target.value,
+    });
+  };
   render() {
     return (
       <div>
-        <LanguageContext.Provider value={"it"}>
+        <select value={this.state.language} onChange={this.handleLangueChange}>
+          <option value="en">English</option>
+          <option value="it">Italian</option>
+        </select>
+        <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
         </LanguageContext.Provider>
         <Container title="React Exercises">
           <Hello />
-
           <Counter
             initialValue={0}
             incrementAmount={1}
@@ -36,7 +47,6 @@ export class App extends React.Component {
           <InteractiveWelcome />
           <Login handleState={onLogin} />
           <UncontrolledLogin />
-
           <TodoList
             render={(todos, handleRemove) => {
               return (
