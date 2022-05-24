@@ -11,7 +11,7 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
-
+import { Sum } from "./Sum";
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -66,6 +66,7 @@ export class App extends React.Component {
             }}
           ></TodoList>
         </Container>
+        <Sum numbers={[1,2,3,4,5]}/>
       </div>
     );
   }
