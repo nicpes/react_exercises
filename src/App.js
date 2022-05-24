@@ -8,6 +8,7 @@ import { Welcome } from "./Welcome";
 import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { TodoList } from "./TodoList";
+import { Container } from "./Container";
 
 const onLogin = (state) => {
   return console.log(state);
@@ -16,7 +17,7 @@ const onLogin = (state) => {
 export class App extends React.Component {
   render() {
     return (
-      <div>
+      <Container>
         <Hello />
 
         <Counter
@@ -29,8 +30,8 @@ export class App extends React.Component {
         <InteractiveWelcome />
         <Login handleState={onLogin} />
         <UncontrolledLogin />
-        <TodoList  />
-      </div>
+        <TodoList />
+      </Container>
     );
   }
 }
