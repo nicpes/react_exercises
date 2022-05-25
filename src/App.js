@@ -12,6 +12,7 @@ import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
+import { CounterUE2 } from "./CounterUseEff2";
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -67,6 +68,7 @@ export class App extends React.Component {
           ></TodoList>
         </Container>
         <Sum />
+        <CounterUE2 />
       </div>
     );
   }
