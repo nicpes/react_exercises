@@ -70,7 +70,7 @@ export class App extends React.Component {
         </Container>
         <Sum />
         <CounterUE2 />
-        <Githubuser name={"nicpes"}/>
+        <Githubuser name={"nicpes"} />
       </div>
     );
   }
