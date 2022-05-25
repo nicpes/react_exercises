@@ -13,6 +13,7 @@ import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { CounterUE2 } from "./CounterUseEff2";
+import { Githubuser } from "./GithubUser";
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -69,6 +70,7 @@ export class App extends React.Component {
         </Container>
         <Sum />
         <CounterUE2 />
+        <Githubuser name={"nicpes"}/>
       </div>
     );
   }
