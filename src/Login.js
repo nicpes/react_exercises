@@ -16,7 +16,9 @@ export function Login() {
       };
     });
   }
-
+  function onlogin() {
+    console.log(data);
+  }
   return (
     <div>
       <p>Login Function</p>
@@ -37,7 +39,10 @@ export function Login() {
         type="checkbox"
         checked={data.remember}
       ></input>
-      <button disabled={(!data.username || !data.password) ?? true}>
+      <button
+        onClick={onlogin}
+        disabled={(!data.username || !data.password) ?? true}
+      >
         Login
       </button>
     </div>
