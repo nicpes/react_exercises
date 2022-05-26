@@ -14,6 +14,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { CounterUE2 } from "./CounterUseEff2";
 import { Githubuser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -70,7 +71,8 @@ export class App extends React.Component {
         </Container>
         <Sum />
         <CounterUE2 />
-        <Githubuser name={"nicpes"} />
+        <Githubuser />
+        <GithubUserList />
       </div>
     );
   }
