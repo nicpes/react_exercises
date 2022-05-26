@@ -15,6 +15,7 @@ import { Sum } from "./Sum";
 import { CounterUE2 } from "./CounterUseEff2";
 import { Githubuser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
+import { HookCounter } from "./HookCounter";
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -73,6 +74,7 @@ export class App extends React.Component {
         <CounterUE2 />
         <Githubuser />
         <GithubUserList />
+        <HookCounter />
       </div>
     );
   }
