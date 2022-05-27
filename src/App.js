@@ -17,6 +17,7 @@ import { Githubuser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
+import { FilteredList } from "./FilteredList";
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -77,6 +78,7 @@ export class App extends React.Component {
         <GithubUserList />
         <HookCounter />
         <HookForm />
+        <FilteredList/>
       </div>
     );
   }
