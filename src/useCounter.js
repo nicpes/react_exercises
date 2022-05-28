@@ -6,15 +6,18 @@ export function useCounter(initialValue = 0) {
 
   const handleCounterIncrement = useCallback(function handleCounterIncrement() {
     setCounter((c) => c + 1);
-  });
+  }, []);
 
   const handleCounterDecrement = useCallback(function handleCounterDecrement() {
     setCounter((c) => c - 1);
-  });
+  }, []);
 
-  const handleCounterReset = useCallback(function handleCounterReset() {
+  const handleCounterReset = useCallback(function handleCounterReset(
+    initialValue
+  ) {
     setCounter(initialValue);
-  });
+  },
+  []);
 
   return {
     counter: counter,
