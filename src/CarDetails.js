@@ -7,22 +7,40 @@ export function CarDetails({ initialData }) {
   const dataRef = useRef();
   const colorRef = useRef();
 
-  function handleFormChange(event) {
+  function handleInputModel(event) {
     event.preventDefault();
-    modelRef.current.value = "";
-    dataRef.current.value = "";
-    colorRef.current.value = "";
+    modelRef.current.value = event.target.value;
+  }
+  function handleInputYear(event) {
+    event.preventDefault();
+    dataRef.current.value = event.target.value;
+  }
+  function handleInputColor(event) {
+    event.preventDefault();
+    colorRef.current.value = event.target.value;
   }
 
   return (
     <div>
       <form>
-        <input ref={modelRef} defaultValue={initialData.model} name="model" />
-        <input ref={dataRef} defaultValue={initialData.year} name="year" />
-        <input ref={colorRef} defaultValue={initialData.color} name="color" />
-        <button onClick={handleFormChange} type="submit">
-          Submit
-        </button>
+        <input
+          onChange={handleInputModel}
+          ref={modelRef}
+          defaultValue={initialData.model}
+          name="model"
+        />
+        <input
+          onChange={handleInputYear}
+          ref={dataRef}
+          defaultValue={initialData.year}
+          name="year"
+        />
+        <input
+          onChange={handleInputColor}
+          ref={colorRef}
+          defaultValue={initialData.color}
+          name="color"
+        />
       </form>
     </div>
   );
