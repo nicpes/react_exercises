@@ -17,7 +17,11 @@ import { Githubuser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
+
 import { CarDetails } from "./CarDetails";
+
+import { FilteredList } from "./FilteredList";
+
 const onLogin = (state) => {
   return console.log(state);
 };
@@ -78,7 +82,11 @@ export class App extends React.Component {
         <GithubUserList />
         <HookCounter />
         <HookForm />
+
         <CarDetails initialData={{model:"Fiat Qubo", year:2008, color:"black"}}/>
+
+        <FilteredList/>
+
       </div>
     );
   }
