@@ -82,11 +82,10 @@ export class App extends React.Component {
         <GithubUserList />
         <HookCounter />
         <HookForm />
-
-        <CarDetails initialData={{model:"Fiat Qubo", year:2008, color:"black"}}/>
-
-        <FilteredList/>
-
+        <CarDetails
+          initialData={{ model: "Fiat Qubo", year: 2008, color: "black" }}
+        />
+        <FilteredList />
       </div>
     );
   }
