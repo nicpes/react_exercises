@@ -11,6 +11,16 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
+import { CounterUE2 } from "./CounterUseEff2";
+import { Githubuser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
+import { HookCounter } from "./HookCounter";
+import { HookForm } from "./HookForm";
+
+import { CarDetails } from "./CarDetails";
+
+import { FilteredList } from "./FilteredList";
 
 const onLogin = (state) => {
   return console.log(state);
@@ -38,9 +48,9 @@ export class App extends React.Component {
         <Container title="React Exercises">
           <Hello />
           <Counter
-            initialValue={0}
-            incrementAmount={1}
-            incrementInterval={1000}
+            onCounterChange={function (counter) {
+              console.log(counter);
+            }}
           />
           <ClickCounter />
           <ClickTracker />
@@ -66,6 +76,16 @@ export class App extends React.Component {
             }}
           ></TodoList>
         </Container>
+        <Sum />
+        <CounterUE2 />
+        <Githubuser />
+        <GithubUserList />
+        <HookCounter />
+        <HookForm />
+        <CarDetails
+          initialData={{ model: "Fiat Qubo", year: 2008, color: "black" }}
+        />
+        <FilteredList />
       </div>
     );
   }
