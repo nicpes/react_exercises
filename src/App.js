@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Welcome } from "./Welcome";
 import { ClickCounter } from "./ClickCounter";
 import { Githubuser } from "./GithubUser";
@@ -13,6 +13,9 @@ export function App() {
         <Route path="click-counter" element={<ClickCounter />} />
         <Route path="users/:name" element={<Githubuser />} />
       </Routes>
+      <Link to="/">Home</Link> <br />
+      <Link to="/click-counter">Click Counter</Link> <br />
+      <Link to="/users/nicpes">GitHub User</Link>
     </div>
   );
 }

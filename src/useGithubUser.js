@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export function useGithubUser() {
-  const { name } = useParams();
+  const { name = "nicpes" } = useParams();
   const [loading, setLoading] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
