@@ -1,16 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-export function useGithubUser({name}) {
 
+export function GithubUser2({name}) {
+ 
   const [loading, setLoading] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
   useEffect(() => {
     setLoading(true);
     {
+   
         fetch(`https://api.github.com/users/${name}`)
           .then((response) => {
             if (response.status !== 200) {
@@ -25,12 +26,14 @@ export function useGithubUser({name}) {
           .catch((error) => {
             setError(error);
           });
-        }
+    }
   }, [name]);
 
-  return {
-    data,
-    error,
-    loading,
-  };
+  return (
+    <div>
+      {loading && <h1>Loading..</h1>}
+      {error && <h1>Error</h1>}
+      {data && <h1>{data.name}</h1>}
+    </div>
+  );
 }

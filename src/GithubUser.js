@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGithubUser } from "./useGithubUser";
 
-export function Githubuser({ name }) {
+export function Githubuser(name) {
   const { data, error, loading } = useGithubUser(name);
   return (
     <div>
