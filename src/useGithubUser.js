@@ -11,8 +11,8 @@ export function useGithubUser({ name }) {
     fetcher
   );
 
-  function handleRefresh(){
-    mutate()
+  function handleRefresh() {
+    mutate();
   }
 
   return {
