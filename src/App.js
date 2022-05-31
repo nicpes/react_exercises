@@ -11,7 +11,6 @@ import { GithubUser2 } from "./GithubUser2";
 export function App() {
   return (
     <div>
-      
       <Routes>
         <Route path="/" element={<Welcome name="nico" />} />
         <Route path="click-counter" element={<ClickCounter />} />
@@ -24,6 +23,7 @@ export function App() {
           }
         />
         <Route path="users" element={<GithubUserList />}>
+          <Route index element={<p>Add a user and select it </p>} />{" "}
           <Route path=":name" element={<ShowGithubUser />} />
         </Route>
       </Routes>
