@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -11,7 +11,12 @@ export function useGithubUser({ name }) {
     fetcher
   );
 
+  function handleRefresh(){
+    mutate()
+  }
+
   return {
+    handleRefresh,
     data,
     error,
     loading,
