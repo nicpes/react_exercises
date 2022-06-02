@@ -1,8 +1,9 @@
 import { createStore } from "redux";
 import { counterReducer, incrementCounter } from "./CounterReducer";
 
-export const store = createStore(counterReducer);
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  todos: todosReducer,
+});
 
-store.dispatch(incrementCounter(1));
-
-console.log(store.getState());
+export const store = createStore(rootReducer);
