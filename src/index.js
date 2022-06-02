@@ -7,6 +7,7 @@ import { counterReducer, incrementCounter } from "./state/CounterReducer";
 
 //ReactDOM.render(<Root />, document.querySelector("#root"));
 
-store.dispatch(incrementCounter(1));
+store.dispatch(addTodo({ title: "Workout", id: 1, completed: "true" }));
+store.dispatch(editTodo(1, { completed: "false" }));
 
 console.log(store.getState());
