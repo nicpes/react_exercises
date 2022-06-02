@@ -4,20 +4,20 @@ const INCREMENT = "COUNTER@INCREMENT";
 const DECREMENT = "COUNTER@DECREMENT";
 const RESET = "COUNTER@RESET";
 
-function incrementCounter() {
+export function incrementCounter(by = 1) {
   return {
     type: INCREMENT,
     payload: by,
   };
 }
 
-function decrementCounter() {
+export function decrementCounter(by = 1) {
   return {
     type: DECREMENT,
     payload: by,
   };
 }
-function resetCounter() {
+export function resetCounter() {
   return {
     type: RESET,
   };
